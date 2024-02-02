@@ -26,7 +26,10 @@ def login(request):
     else:
         form = UserLoginForm()
 
-    context = {"title": "Home - Авторизация", "form": form}
+    context = {
+        "title": "Home - Авторизация",
+        "form": form
+        }
     return render(request, "users/login.html", context)
 
 
