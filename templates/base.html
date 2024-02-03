@@ -73,7 +73,7 @@
                             </li>
                         {% endif %}
                     </ul>
-                    <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get"> 
+                    <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
                     </form>
@@ -98,12 +98,11 @@
                         {% for category in categories %}
                             <li><a class="dropdown-item text-white" href="{% url "catalog:index" category.slug %}">{{category.name}}</a></li>
                         {% endfor %}
+
                     </ul>
                 </div>
                 <!-- Значек корзины, вызывает модальное окно -->
-                {% block modal_cart %}
-                
-                {% endblock %}
+                {% block modal_cart %}{% endblock  %}
                 <!-- Закончилась разметка модального окна -->
             </div>
         </div>
@@ -116,16 +115,15 @@
                 <div class="col-lg-10">
                     <!-- Контент на странице -->
                     {% include "includes/notifications.html" %}
-                   {% block content %}
-                   
-                   {% endblock content %}
+                    {% block content %}{% endblock %}
                 </div>
             </div>
         </div>
     </section>
-   {% block footer %}{% endblock footer %}
+
+    {% block footer %}{% endblock %}
+
     <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
-    <script src="{% static "deps/js/jquery-events.js" %}"></script>
     <script src="{% static "deps/js/jquery-ajax.js" %}"></script>
     <script src="{% static "deps/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
 </body>
